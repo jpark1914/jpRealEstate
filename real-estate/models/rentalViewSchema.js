@@ -24,3 +24,5 @@ const rentalViewModel = new Schema({
        type: Number,
     }
 });
+
+module.exports = mongoose.model('rental', rentalViewModel);
