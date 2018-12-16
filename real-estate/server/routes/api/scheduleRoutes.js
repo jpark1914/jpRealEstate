@@ -15,12 +15,7 @@ router.get('/', async (req, res) => {
 //ADD POSTS
 router.post('/', async (req, res) =>{
  const newRental = await new Rental({
-  name: req.body.name,
-  age: req.body.age,
-  rentalHouseAddress: req.body.rentalHouseAddress,
-  timeOfViewing: req.body.timeOfViewing,
-  email: req.body.email,
-  phone: req.body.phone,
+  nameOfApplicant: req.body.nameOfApplicant,
  })
  await newRental.save()
      .then(() => res.send('POST request is okay from scheduleRoutes in routes/scheduleRoutes.js'));
