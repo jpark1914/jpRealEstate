@@ -19,8 +19,8 @@ const rentalViewModel = new Schema({
     priorCity: String,
     priorState: String,
     priorZip: Number,
-    yearsAtPresentAddress: Number,
-    yearsAtPriorAddress: Number,
+    yearsAtPresentAddress: String,
+    yearsAtPriorAddress: String,
     priorLandlord: String,
     landLordPhone: Number,
     totalAdults: Number,
@@ -61,21 +61,21 @@ const rentalViewModel = new Schema({
 
     //Personal Credit References
 
-    referenceName: [String],
-    relationship: [String],
-    referenceNumber: [String],
-    creditGrantor: [String],
-    grantorAddress: [String],
-    grantorPhone:[Number],
+    referenceName: String,
+    relationship: String,
+    referenceNumber: String,
+    creditGrantor: String,
+    grantorAddress: String,
+    grantorPhone:Number,
 
     //Other Information
 
     numberOfVehicles: Number,
-    makeModel: [String],
-    year: [Number],
-    color: [String],
-    tagNo: [Number],
-    state: [String],
+    makeModel: String,
+    year: Number,
+    color: String,
+    tagNo: Number,
+    state: String,
 
 
 
