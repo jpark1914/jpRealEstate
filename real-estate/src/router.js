@@ -18,11 +18,11 @@ export default new Router({
             name: 'form',
             component: RentalHousing
         },
-        {
-            path: '/view',
-            name: 'view',
-            component: ViewComponent
-        },
+        // {
+        //     path: '/view',
+        //     name: 'view',
+        //     component: ViewComponent
+        // },
 
     ]
 })
