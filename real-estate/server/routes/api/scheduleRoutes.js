@@ -6,7 +6,7 @@ const Rental = require('../../../models/rentalViewSchema');
 //GET POSTS
 
 router.get('/', async (req, res) => {
- console.log(Rental);
+    console.log('Getting your request');
  await Rental.find()
      .then(info => res.json(info));
 });
@@ -15,8 +15,8 @@ router.get('/', async (req, res) => {
 //ADD POSTS
 router.post('/', async (req, res) =>{
  const newRental = await new Rental({
-     presentDate: req.body.presentDate,
      nameOfApplicant: req.body.nameOfApplicant,
+     presentDate: req.body.presentDate,
      DOB: req.body.DOB,
      email: req.body.email,
      cellPhone: req.body.cellPhone,
@@ -27,6 +27,7 @@ router.post('/', async (req, res) =>{
      presentState: req.body.presentState,
      presentZip: req.body.presentZip,
      priorAddress: req.body.priorAddress,
+     priorState: req.body.priorState,
      priorCity: req.body.priorCity,
      priorZip: req.body.priorZip,
      yearsAtPresentAddress: req.body.yearsAtPresentAddress,
@@ -73,6 +74,7 @@ router.post('/', async (req, res) =>{
      tagNo: req.body.tagNo,
      state: req.body.state
  })
+    console.log('Your message is being saved as "NEW RENTAL');
  await newRental.save()
      .then(() => res.send('POST request is okay from scheduleRoutes in routes/scheduleRoutes.js'));
 

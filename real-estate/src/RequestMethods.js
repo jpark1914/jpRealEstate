@@ -38,6 +38,7 @@ class RequestMethods {
                       presentZip,
                       priorAddress,
                       priorCity,
+                      priorState,
                       priorZip,
                       yearsAtPresentAddress,
                       yearsAtPriorAddress,

@@ -1,6 +1,6 @@
 <template>
     <b-container>
-        <h1>Client Info</h1>
+        <h1>Future Tenant Information</h1>
         <!--<div class="insert-post">-->
             <!--<label for="nameOfApplicant">Name of Applicant: </label>-->
             <!--<input type="text" id="nameOfApplicant" v-model="nameOfApplicant" placeholder="Enter A Name..."/>-->
@@ -15,7 +15,8 @@
             <!--<button v-on:click="insertPost">Post</button>-->
         <!--</div>-->
 
-            <b-form>
+        <!--FIRST ROW-->
+            <b-form @submit="insertPost">
                 <b-row align-h="center">
                     <b-col cols="4">
                         <b-input  id="nameOfApplicant"
@@ -28,7 +29,7 @@
                     </b-col>
                     <b-col cols="4">
                         <b-input  id="presentDate"
-                                  type="date"
+                                  type="text"
                                   v-model="presentDate"
                                   required
                                   placeholder="Date">
@@ -37,7 +38,7 @@
                     </b-col>
                     <b-col cols="4">
                         <b-input  id="DOB"
-                                  type="date"
+                                  type="text"
                                   v-model="DOB"
                                   required
                                   placeholder="Date Of Birth">
@@ -46,11 +47,13 @@
                     </b-col>
                 </b-row>
 
+                <!--END ROW-->
+                <!--SECOND ROW-->
 
                 <b-row align-h="center">
                     <b-col cols="4">
                         <b-input  id="email"
-                                  type="email"
+                                  type="text"
                                   v-model="email"
                                   required
                                   placeholder="Email">
@@ -59,7 +62,7 @@
                     </b-col>
                     <b-col cols="4">
                         <b-input  id="cellPhone"
-                                  type="tel"
+                                  type="text"
                                   v-model="cellPhone"
                                   required
                                   placeholder="Cell Phone">
@@ -71,28 +74,31 @@
                                   type="text"
                                   v-model="ssn"
                                   required
-                                  placeholder="Social Security Number">
+                                  placeholder="e.x, 777-77-7777">
                         </b-input>
                         <label for="ssn">SSN </label>
                     </b-col>
                 </b-row>
 
+                <!--END ROW-->
 
-                <b-row align-h="center">
-                    <b-col cols="12">
+                <!--THIRD ROW-->
+                <b-row align-h="start">
+                    <b-col cols="8">
                         <b-input  id="driverLicense"
-                                  type="number"
+                                  type="text"
                                   v-model="driverLicense"
                                   required
-                                  placeholder="Driver License Number">
+                                  placeholder='e.x. 192837456'>
                         </b-input>
                         <label for="driverLicense">Driver License</label>
                     </b-col>
                 </b-row>
+                <!--END ROW-->
 
-
+                <!--FOURTH ROW-->
                 <b-row align-h="center">
-                    <b-col cols="3">
+                    <b-col cols="6">
                         <b-input  id="presentAddress"
                                   type="text"
                                   v-model="presentAddress"
@@ -101,7 +107,7 @@
                         </b-input>
                         <label for="presentAddress">Present Address </label>
                     </b-col>
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="presentCity"
                                   type="text"
                                   v-model="presentCity"
@@ -111,7 +117,7 @@
                         <label for="presentCity">Present City </label>
                     </b-col>
 
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="presentState"
                                   type="text"
                                   v-model="presentState"
@@ -120,9 +126,9 @@
                         </b-input>
                         <label for="presentCity">Present State </label>
                     </b-col>
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="presentZip"
-                                  type="number"
+                                  type="text"
                                   v-model="presentZip"
                                   required
                                   placeholder="e.x 38102">
@@ -132,18 +138,18 @@
                 </b-row>
                 <!--END ROW-->
 
-                <!--NEXT ROW-->
+                <!--FIFTH ROW-->
                 <b-row align-h="center">
-                    <b-col cols="3">
+                    <b-col cols="6">
                         <b-input  id="priorAddress"
                                   type="text"
                                   v-model="priorAddress"
                                   required
                                   placeholder="e.x. 3002 Castleman Road">
                         </b-input>
-                        <label for="presentCity">Present City </label>
+                        <label for="presentCity">Prior City </label>
                     </b-col>
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="priorCity"
                                   type="text"
                                   v-model="priorCity"
@@ -152,7 +158,7 @@
                         </b-input>
                         <label for="priorCity">Prior City </label>
                     </b-col>
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="priorState"
                                   type="text"
                                   v-model="priorState"
@@ -161,9 +167,9 @@
                         </b-input>
                         <label for="priorState">Prior State </label>
                     </b-col>
-                    <b-col cols="3">
+                    <b-col cols="2">
                         <b-input  id="priorZip"
-                                  type="number"
+                                  type="text"
                                   v-model="priorZip"
                                   required
                                   placeholder="e.x. 38118">
@@ -173,7 +179,7 @@
                 </b-row>
                 <!--END ROW-->
 
-                <!--NEXT ROW-->
+                <!--SIXTH ROW-->
                 <b-row align-h="center">
                     <b-col cols="6">
                         <b-input  id="yearsAtPresentAddress"
@@ -186,7 +192,7 @@
                     </b-col>
                     <b-col cols="6">
                         <b-input  id="yearsAtPriorAddress"
-                                  type="number"
+                                  type="text"
                                   v-model="yearsAtPriorAddress"
                                   required
                                   placeholder="10 years 2 months">
@@ -196,11 +202,11 @@
                 </b-row>
                 <!--END ROW-->
 
-                <!--NEXT ROW-->
+                <!--SEVENTH ROW-->
                 <b-row align-h="center">
                     <b-col cols="6">
                         <b-input  id="priorLandlord"
-                                  type="email"
+                                  type="text"
                                   v-model="priorLandlord"
                                   required
                                   placeholder="">
@@ -209,7 +215,7 @@
                     </b-col>
                     <b-col cols="6">
                         <b-input  id="landLordPhone"
-                                  type="tel"
+                                  type="text"
                                   v-model="landLordPhone"
                                   required
                                   placeholder="e.x 9016345554">
@@ -220,12 +226,419 @@
                 <!--END ROW-->
 
 
+                <!--EIGHTH ROW-->
+                <b-row align-h="center">
+                    <b-col cols="3">
+                        <b-input  id="totalAdults"
+                                  type="text"
+                                  v-model="totalAdults"
+                                  required
+                                  placeholder="2">
+                        </b-input>
+                        <label for="totalAdults">How Many Adults Will Be In This Unit? </label>
+                    </b-col>
+                    <b-col cols="3">
+                        <b-input  id="totalChildren"
+                                  type="text"
+                                  v-model="totalChildren"
+                                  required
+                                  placeholder="1">
+                        </b-input>
+                        <label for="totalChildren">How Many Children Will Be In This Unit? </label>
+                    </b-col>
+                    <b-col cols="3">
+                        <b-input  id="totalPets"
+                                  type="text"
+                                  v-model="totalPets"
+                                  required
+                                  placeholder="2">
+                        </b-input>
+                        <label for="totalPets">How Many Pets Will Be In This Unit? </label>
+                    </b-col>
+                    <b-col cols="3">
+                        <b-input  id="petWeight"
+                                  type="text"
+                                  v-model="petWeight"
+                                  required
+                                  placeholder="60lbs, 12lbs">
+                        </b-input>
+                        <label for="petWeight">Weight Of Pets </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
 
+                <!--NINTH ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="employer"
+                                  type="text"
+                                  v-model="employer"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="employer">Employer </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="occupation"
+                                  type="text"
+                                  v-model="occupation"
+                                  required
+                                  placeholder="e.x. Warehouse Associate">
+                        </b-input>
+                        <label for="occupation">Occupation </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--TENTH ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="currentSalary"
+                                  type="text"
+                                  v-model="currentSalary"
+                                  required
+                                  placeholder="$13.50/hr or $35,000">
+                        </b-input>
+                        <label for="currentSalary">Current Salary </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="yearsWorked"
+                                  type="text"
+                                  v-model="yearsWorked"
+                                  required
+                                  placeholder="2 years 10 months">
+                        </b-input>
+                        <label for="yearsWorked">How Long Have You Been Employed </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--ELEVENTH ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="contactPerson"
+                                  type="text"
+                                  v-model="contactPerson"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="contactPerson">Contact Person </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="contactNumber"
+                                  type="text"
+                                  v-model="contactNumber"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="contactNumber">Telephone NO. </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <hr/>
+                <!--===============================
+                            SPOUSE INFORMATION
+                ===================================-->
+                <h1>Spouse Information</h1>
+
+
+                <!--FIRST ROW-->
+                <b-row align-h="center">
+                    <b-col cols="4">
+                        <b-input  id="spouseName"
+                                  type="text"
+                                  v-model="spouseName"
+                                  required
+                                  placeholder="e.x. Jane Doe">
+                        </b-input>
+                        <label for="spouseName">Name of Spouse </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spouseDOB"
+                                  type="text"
+                                  v-model="spouseDOB"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseDOB">Spouse Date Of Birth </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spousePhone"
+                                  type="text"
+                                  v-model="spousePhone"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spousePhone">Telephone No. </label>
+                    </b-col>
+                </b-row>
+
+                <!--END ROW-->
+
+                <!--SECOND ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="spouseSsn"
+                                  type="text"
+                                  v-model="spouseSsn"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseSsn">Social Security No. </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="spouseDriverLicense"
+                                  type="text"
+                                  v-model="spouseDriverLicense"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseDriverLicense">Driver's License No. </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--THIRD ROW-->
+                <b-row align-h="center">
+                    <b-col cols="4">
+                        <b-input  id="spouseEmployer"
+                                  type="text"
+                                  v-model="spouseEmployer"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseEmployer">Employer </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spouseOccupation"
+                                  type="text"
+                                  v-model="spouseOccupation"
+                                  required
+                                  placeholder="e.x. County Clerk">
+                        </b-input>
+                        <label for="spouseOccupation">Occupation </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spouseCurrentSalary"
+                                  type="text"
+                                  v-model="spouseCurrentSalary"
+                                  required
+                                  placeholder="$13.50/hr or $35,000">
+                        </b-input>
+                        <label for="spouseCurrentSalary">Current Salary </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--FOURTH ROW-->
+                <b-row align-h="center">
+                    <b-col cols="4">
+                        <b-input  id="spouseYearsWorked"
+                                  type="text"
+                                  v-model="spouseYearsWorked"
+                                  required
+                                  placeholder="2 years 10 months">
+                        </b-input>
+                        <label for="spouseYearsWorked">How long? </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spouseContactPerson"
+                                  type="text"
+                                  v-model="spouseContactPerson"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseContactPerson">Contact Person </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="spouseContactPhone"
+                                  type="text"
+                                  v-model="spouseContactPhone"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="spouseContactPhone">Telephone No. </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+
+                <hr/>
+                <!--===============================
+                            BANKING INFORMATION
+                ===================================-->
+                <h1>Banking Information</h1>
+
+                <!--FIRST ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="bankName"
+                                  type="text"
+                                  v-model="bankName"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="bankName">Bank Name </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="bankBranch"
+                                  type="text"
+                                  v-model="bankBranch"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="bankBranch">Bank Branch </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--SECOND ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="bankPhone"
+                                  type="text"
+                                  v-model="bankPhone"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="bankPhone">Telephone No. </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="bankAddress"
+                                  type="text"
+                                  v-model="bankAddress"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="bankAddress">Bank Address </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--THIRD ROW-->
+                <b-row align-h="center">
+                    <b-col cols="6">
+                        <b-input  id="checkingAccount"
+                                  type="text"
+                                  v-model="checkingAccount"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="checkingAccount">Checking Account Number </label>
+                    </b-col>
+                    <b-col cols="6">
+                        <b-input  id="savingsAccount"
+                                  type="text"
+                                  v-model="savingsAccount"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="savingsAccount">Savings Account Number</label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <hr/>
+                <!--===============================
+                           PERSONAL REFERENCES
+                ===================================-->
+                <h1>Personal Credit References</h1>
+                <!--FIRST ROW-->
+                <b-row align-h="center">
+                    <b-col cols="4">
+                        <b-input  id="referenceName"
+                                  type="text"
+                                  v-model="referenceName"
+                                  required
+                                  placeholder="Jane Doe, Don Quixote,etc...">
+                        </b-input>
+                        <label for="referenceName">Name of Reference(s) </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="relationship"
+                                  type="text"
+                                  v-model="relationship"
+                                  required
+                                  placeholder="Coworker, Father, etc...">
+                        </b-input>
+                        <label for="relationship">Relationship(s) </label>
+                    </b-col>
+                    <b-col cols="4">
+                        <b-input  id="referenceNumber"
+                                  type="text"
+                                  v-model="referenceNumber"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="referenceNumber">Reference Number</label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--===============================
+                        PERSONAL REFERENCES
+                ===================================-->
+                <h1>Vehicle Information</h1>
+
+                <!--FIRST ROW-->
+                <b-row align-h="start">
+                    <b-col cols="2">
+                        <b-input  id="numberOfVehicles"
+                                  type="text"
+                                  v-model="numberOfVehicles"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="numberOfVehicles">Number Of Vehicles </label>
+                    </b-col>
+                    <b-col cols="10">
+                        <b-input  id="makeModel"
+                                  type="text"
+                                  v-model="makeModel"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="makeModel">List Makes and Models </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <!--SECOND ROW-->
+                <b-row align-h="between">
+
+                    <b-col cols="2">
+                        <b-input  id="year"
+                                  type="text"
+                                  v-model="year"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="year">Year(s) </label>
+                    </b-col>
+                    <b-col cols="2">
+                        <b-input  id="color"
+                                  type="text"
+                                  v-model="color"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="color">Color(s) </label>
+                    </b-col>
+                    <b-col cols="2">
+                        <b-input  id="tagNo"
+                                  type="text"
+                                  v-model="tagNo"
+                                  required
+                                  placeholder="">
+                        </b-input>
+                        <label for="tagNo">Tag Number(s) </label>
+                    </b-col>
+                </b-row>
+                <!--END ROW-->
+
+                <b-button type="submit" variant="primary">Submit</b-button>
             </b-form>
-
-
-            <!--Submit ENTIRE Form-->
-            <b-button type="submit" variant="primary">Submit</b-button>
 
 
         <p class="error" v-if="error">{{error}}</p>
@@ -266,6 +679,7 @@
               presentZip: '',
               priorAddress: '',
               priorCity: '',
+              priorState: '',
               priorZip: '',
               yearsAtPresentAddress: '',
               yearsAtPriorAddress: '',

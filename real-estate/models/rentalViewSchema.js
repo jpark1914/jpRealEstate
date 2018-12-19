@@ -4,60 +4,60 @@ const Schema = mongoose.Schema;
 //Create Schema
 
 const rentalViewModel = new Schema({
-    presentDate: Date,
     nameOfApplicant: String,
+    presentDate: Date,
     DOB: Date,
     email: String,
-    cellPhone: Number,
-    ssn: Number,
-    driverLicense: Number,
+    cellPhone: String,
+    ssn: String,
+    driverLicense: String,
     presentAddress: String,
     presentCity: String,
     presentState: String,
-    presentZip: Number,
+    presentZip: String,
     priorAddress: String,
     priorCity: String,
     priorState: String,
-    priorZip: Number,
+    priorZip: String,
     yearsAtPresentAddress: String,
     yearsAtPriorAddress: String,
     priorLandlord: String,
-    landLordPhone: Number,
-    totalAdults: Number,
-    totalChildren: Number,
-    totalPets: Number,
-    petWeight: [],
+    landLordPhone: String,
+    totalAdults: String,
+    totalChildren: String,
+    totalPets: String,
+    petWeight: String,
     employer: String,
     occupation: String,
     currentSalary: String,
-    yearsWorked: Number,
+    yearsWorked: String,
     contactPerson: String,
-    contactNumber: Number,
+    contactNumber: String,
 
 
     //Spouse Information
 
     spouseName: String,
     spouseDOB: Date,
-    spousePhone: Number,
-    spouseSsn: Number,
-    spouseDriverLicense: Number,
+    spousePhone: String,
+    spouseSsn: String,
+    spouseDriverLicense: String,
     spouseEmployer: String,
     spouseOccupation: String,
     spouseCurrentSalary: String,
-    spouseYearsWorked: Number,
+    spouseYearsWorked: String,
     spouseContactPerson: String,
-    spouseContactPhone: Number,
+    spouseContactPhone: String,
 
 
     //Bank Information
 
     bankName: String,
     bankBranch: String,
-    bankPhone: Number,
+    bankPhone: String,
     bankAddress: String,
-    checkingAccount: Number,
-    savingsAccount: Number,
+    checkingAccount: String,
+    savingsAccount: String,
 
     //Personal Credit References
 
@@ -66,15 +66,15 @@ const rentalViewModel = new Schema({
     referenceNumber: String,
     creditGrantor: String,
     grantorAddress: String,
-    grantorPhone:Number,
+    grantorPhone:String,
 
     //Other Information
 
-    numberOfVehicles: Number,
+    numberOfVehicles: String,
     makeModel: String,
-    year: Number,
+    year: String,
     color: String,
-    tagNo: Number,
+    tagNo: String,
     state: String,
 
 
