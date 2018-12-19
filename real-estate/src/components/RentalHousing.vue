@@ -29,7 +29,7 @@
                     </b-col>
                     <b-col cols="4">
                         <b-input  id="presentDate"
-                                  type="text"
+                                  type="date"
                                   v-model="presentDate"
                                   required
                                   placeholder="Date">
@@ -38,7 +38,7 @@
                     </b-col>
                     <b-col cols="4">
                         <b-input  id="DOB"
-                                  type="text"
+                                  type="date"
                                   v-model="DOB"
                                   required
                                   placeholder="Date Of Birth">
@@ -641,18 +641,18 @@
             </b-form>
 
 
-        <p class="error" v-if="error">{{error}}</p>
-        <div class="schedules-container">
-            <div class="schedule"
-                 v-for="(item, index) in schedule"
-                 v-bind:item="item"
-                 v-bind:index="index"
-                 v-bind:key="item._id">
-                <p class="name">Name: {{item.nameOfApplicant}}</p>
-                <p class="car">Make/Model: {{item.makeModel}}</p>
-                <hr/>
-            </div>
-        </div>
+        <!--<p class="error" v-if="error">{{error}}</p>-->
+        <!--<div class="schedules-container">-->
+            <!--<div class="schedule"-->
+                 <!--v-for="(item, index) in schedule"-->
+                 <!--v-bind:item="item"-->
+                 <!--v-bind:index="index"-->
+                 <!--v-bind:key="item._id">-->
+                <!--<p class="name">Name: {{item.nameOfApplicant}}</p>-->
+                <!--<p class="car">Make/Model: {{item.makeModel}}</p>-->
+                <!--<hr/>-->
+            <!--</div>-->
+        <!--</div>-->
     </b-container>
 
 
@@ -666,8 +666,8 @@
           return{
               schedule: [],
               error: '',
-              presentDate: '',
               nameOfApplicant: '',
+              presentDate: '',
               DOB: '',
               email: '',
               cellPhone: '',
@@ -738,7 +738,6 @@
           async insertPost() {
               await RequestMethods.createPost(this.nameOfApplicant,
                   this.presentDate,
-                  this.nameOfApplicant,
                   this.DOB,
                   this.email,
                   this.cellPhone,
@@ -750,6 +749,7 @@
                   this.presentZip,
                   this.priorAddress,
                   this.priorCity,
+                  this.priorState,
                   this.priorZip,
                   this.yearsAtPresentAddress,
                   this.yearsAtPriorAddress,

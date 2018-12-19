@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import RentalHousing from "./components/RentalHousing";
+import Landing from "./components/Landing";
 
 
 Vue.use(Router)
@@ -10,12 +11,12 @@ export default new Router({
         {
             path: '/',
             name: 'welcome',
-            component: RentalHousing
+            component: Landing
         },
         {
-            path: '/about',
-            name: 'about',
-            component: About
+            path: '/form',
+            name: 'form',
+            component: RentalHousing
         },
         {
             path: '/view',

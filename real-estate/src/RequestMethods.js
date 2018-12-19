@@ -25,8 +25,9 @@ class RequestMethods {
     }
 
     //CREATE Posts
-    static createPost(presentDate,
+    static createPost(
                       nameOfApplicant,
+                      presentDate,
                       DOB,
                       email,
                       cellPhone,

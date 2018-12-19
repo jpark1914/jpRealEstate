@@ -5,12 +5,11 @@
 </template>
 
 <script>
-import RentalHousing from './components/RentalHousing.vue'
 
 export default {
   name: 'app',
   components: {
-    RentalHousing
+
   }
 }
 </script>
