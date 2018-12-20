@@ -2,9 +2,11 @@
   <div id="app">
 
     <nav>
-      <router-link to="/">Home </router-link>
-      <router-link to="/form">Rental Form </router-link>
-      <router-link to="/posts">Posts </router-link>
+      <b-navbar variant="faded" type="dark">
+        <b-navbar-brand><router-link to="/">Home </router-link></b-navbar-brand>
+        <b-navbar-brand><router-link to="/form">Rental Form </router-link></b-navbar-brand>
+      </b-navbar>
+
     </nav>
     <router-view/>
   </div>

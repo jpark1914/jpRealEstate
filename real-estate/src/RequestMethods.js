@@ -24,6 +24,26 @@ class RequestMethods {
         })
     }
 
+    // GET ONE POST
+
+    static getOnePost(id){
+        return new Promise( async (resolve, reject) => {
+            try{
+                const res = await axios.get(`${url}${id}`);
+                const data = res.data;
+                resolve(
+                    data.map(post => ({
+                            ...post,
+                            createdAt: new Date(post.createdAt)
+                        })
+                    )
+                );
+            }catch (err) {
+                reject(err);
+
+            }
+        })
+    }
     //CREATE Posts
     static createPost(
                       nameOfApplicant,
